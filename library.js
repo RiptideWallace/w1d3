@@ -30,9 +30,12 @@ var library = {
 var addTrack = function (name, artist, album) {
   var t0123 = library["tracks"];
   for (var tracklistID in library["tracks"]) {
+
     var tracklistName = library["tracks"][tracklistID]["name"];
     var tracklistArtist = library["tracks"][tracklistID]["artist"];
     var tracklistAlbum = library["tracks"][tracklistID]["album"];
+
+    library["tracks"] =
 
     name.tracklistName.push("Scar Tissue")
     artist.tracklistArtist.push("Red Hot Chili Peppers")
@@ -48,6 +51,8 @@ var addPlaylist = function (name) {
   for (var songlistID in library["playlists"]) {
     var playlistName = library["playlists"][songlistID]["name"];
     var playlistTracks = library["playlists"][songlistID]["tracks"];
+
+    library["playlists"] =
 
     name.playlistName.push("Playlist Three")
 
@@ -161,4 +166,3 @@ var uid = function() {
 var printSearchResults = function(query) {
 
 }
-

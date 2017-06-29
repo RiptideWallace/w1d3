@@ -35,15 +35,13 @@ var addTrack = function (name, artist, album) {
     var tracklistArtist = library["tracks"][tracklistID]["artist"];
     var tracklistAlbum = library["tracks"][tracklistID]["album"];
 
-    library["tracks"] =
+    library["tracks"] = addTrack("Scar Tissue", "Red Hot Chili Peppers", "Californication")
 
-    name.tracklistName.push("Scar Tissue")
-    artist.tracklistArtist.push("Red Hot Chili Peppers")
-    album.tracklistAlbum.push("Californication")
     console.log(tracklistID + ": " + tracklistName + " by " + tracklistArtist + " (" + tracklistAlbum + ")")
   }
 }
 addTrack(library)
+
 // adds a playlist to the library
 
 var addPlaylist = function (name) {
@@ -52,9 +50,7 @@ var addPlaylist = function (name) {
     var playlistName = library["playlists"][songlistID]["name"];
     var playlistTracks = library["playlists"][songlistID]["tracks"];
 
-    library["playlists"] =
-
-    name.playlistName.push("Playlist Three")
+    library["playlists"] = addPlaylist("Playlist Three")
 
   console.log(songlistID + ": " + playlistName + " - " + playlistTracks.length + ' tracks');
 

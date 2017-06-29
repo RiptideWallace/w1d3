@@ -38,6 +38,11 @@ var addTrack = function (name, artist, album) {
     library["tracks"] = addTrack("Scar Tissue", "Red Hot Chili Peppers", "Californication")
 
     console.log(tracklistID + ": " + tracklistName + " by " + tracklistArtist + " (" + tracklistAlbum + ")")
+
+    var uid = function() {
+    return Math.floor((1 + Math.random()) * 0x10000).toString(16).substring(1);
+
+    }
   }
 }
 addTrack(library)
@@ -52,8 +57,12 @@ var addPlaylist = function (name) {
 
     library["playlists"] = addPlaylist("Playlist Three")
 
-  console.log(songlistID + ": " + playlistName + " - " + playlistTracks.length + ' tracks');
+    console.log(songlistID + ": " + playlistName + " - " + playlistTracks.length + ' tracks');
 
+    var uid = function() {
+    return Math.floor((1 + Math.random()) * 0x10000).toString(16).substring(1);
+
+    }
   }
 }
 addPlaylist(library)

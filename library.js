@@ -55,14 +55,30 @@ var addPlaylist = function (name) {
 
   }
 }
+addPlaylist(library)
 
 // adds an existing track to an existing playlist
 
 var addTrackToPlaylist = function (trackId, playlistId) {
+var p012 = library["playlists"];
+  for (var songlistID in library["playlists"]) {
+    var playlistName = library["playlists"][songlistID]["name"];
+    var playlistTracks = library["playlists"][songlistID]["tracks"];
 
+    for (var tracklistID in library["tracks"]) {
+      var tracklistName = library["tracks"][tracklistID]["name"];
+      var tracklistArtist = library["tracks"][tracklistID]["artist"];
+      var tracklistAlbum = library["tracks"][tracklistID]["album"];
+
+      name.tracklistName.push("name")
+      artist.tracklistArtist.push("artist")
+      album.tracklistAlbum.push("album")
+      console.log(songlistID + ": " + playlistName + " - " + playlistTracks.length + ' tracks')
+      console.log(tracks + ": " + tracklistName + " by " + tracklistArtist + " (" + tracklistAlbum + ")");
+    }
   }
 }
-
+addTrackToPlaylist(library)
 
 
 //prints a list of tracks for a given playlist, in the form:

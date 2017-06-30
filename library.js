@@ -107,19 +107,28 @@ var addPlaylist = function (name) {
   var newPlaylistID = uid();
   var newPlaylist = {
     id: newPlaylistID,
-    name: name
+    name: name,
+    tracks: []
   }
   library["playlists"][newPlaylistID] = newPlaylist;
 }
-addPlaylist("Playlist Three")
+addPlaylist("Playlist Three");
+
+printPlaylist()
+
 // adds an existing track to an existing playlist
 
 var addTrackToPlaylist = function (trackId, playlistId) {
+  var newTrackLocation = {
+    id: trackID
+    id: playlistID
+  }
+
   library["playlists"][songlistID]["tracks"].push(trackID);
 
 }
 
-addTrackToPlaylist(trackToAdd, existingPlaylist)
+addTrackToPlaylist("t01", "p02")
 
 
 
@@ -142,6 +151,6 @@ addTrackToPlaylist(trackToAdd, existingPlaylist)
 // tip: use "string".search("tri")
 // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/search
 
-var printSearchResults = function(query) {
+//var printSearchResults = function(query) {
 
-}
+//}

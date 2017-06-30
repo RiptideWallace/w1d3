@@ -84,19 +84,19 @@ var printPlaylist = function (playlistId) {
 printPlaylist()
 
 // adds a track to the library
-
-var addTrack = function (name, artist, album) {
-
-  var uid = function() {
+var uid = function() {
   return Math.floor((1 + Math.random()) * 0x10000).toString(16).substring(1);
   }
 
-  var t0123 = library["tracks"];
-  for (var tracklistID in library["tracks"]) {
-    var tracklistName = library["tracks"][tracks]["name"];
-    var tracklistArtist = library["tracks"][tracks]["artist"];
-    var tracklistAlbum = library["tracks"][tracks]["album"]
+var addTrack = function (name, artist, album) {
+  var newTrackID = uid();
+  var newTrack = {
+    id: newTrackID,
+    name: name,
+    artist: artist,
+    album: album
   }
+  library["tracks"][newTrackID] = newTrack;
 }
 addTrack("Scar Tissue", "Red Hot Chili Peppers", "Californication")
 
@@ -104,21 +104,18 @@ printTracks()
 // adds a playlist to the library
 
 var addPlaylist = function (name) {
-  var uid = function() {
-  return Math.floor((1 + Math.random()) * 0x10000).toString(16).substring(1);
+  var newPlaylistID = uid();
+  var newPlaylist = {
+    id: newPlaylistID,
+    name: name
   }
-
-  var p012 = library["playlists"];
-  for (var songlistID in library["playlists"]) {
-    var playlistName = library["playlists"][songlistID]["name"];
-    var playlistTracks = library["playlists"][songlistID]["tracks"];
-  }
+  library["playlists"][newPlaylistID] = newPlaylist;
 }
-addPLaylist("Playlist Three")
+addPlaylist("Playlist Three")
 // adds an existing track to an existing playlist
 
 var addTrackToPlaylist = function (trackId, playlistId) {
-  library.playlists[playlistID].tracks.push(trackID);
+  library["playlists"][songlistID]["tracks"].push(trackID);
 
 }
 
